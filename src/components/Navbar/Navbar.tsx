@@ -1,5 +1,8 @@
-import Brightness6OutlinedIcon from "@mui/icons-material/Brightness6Outlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import React from "react";
+import { Link } from "react-scroll";
+
 import {
   AppBar,
   Box,
@@ -8,18 +11,20 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-import Link from "next/link";
+// import Link from "next/link";
 
 interface ThemeToggleProps {
   isDarkMode: boolean;
   setDarkMode: (darkMode: boolean) => void;
 }
+
 const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
   const handleThemeToggle = () => {
     setDarkMode(!isDarkMode);
   };
+
   return (
-    <Box>
+    <>
       <AppBar
         elevation={0}
         position="fixed"
@@ -36,10 +41,7 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
               }}
             >
               <Box>
-                <Typography
-                  variant="h6"
-                  sx={{ fontWeight: 600, color: "text.main" }}
-                >
+                <Typography variant="h6" sx={{ fontWeight: 600 }}>
                   Sut Pi
                 </Typography>
               </Box>
@@ -58,12 +60,16 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                   }}
                 >
                   <Link
-                    href={""}
-                    style={{
-                      textDecoration: "none",
-                    }}
+                    activeClass="active-link"
+                    to="home"
+                    spy={true}
+                    smooth={true}
+                    style={{ cursor: "pointer", userSelect: "none" }}
+                    offset={50}
+                    duration={500}
                   >
                     <Typography
+                      className="custom-link"
                       sx={{
                         fontWeight: 600,
                         color: "text.main",
@@ -75,6 +81,49 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                     </Typography>
                   </Link>
                   <Link
+                    activeClass="active-link"
+                    to="about"
+                    spy={true}
+                    smooth={true}
+                    style={{ cursor: "pointer", userSelect: "none" }}
+                    offset={50}
+                    duration={500}
+                  >
+                    <Typography
+                      className="custom-link"
+                      sx={{
+                        fontWeight: 600,
+                        color: "text.main",
+                        "&:hover": { color: "primary.main" },
+                        fontSize: "17px",
+                      }}
+                    >
+                      About
+                    </Typography>
+                  </Link>
+                  <Link
+                    activeClass="active-link"
+                    to="skills"
+                    spy={true}
+                    smooth={true}
+                    style={{ cursor: "pointer", userSelect: "none" }}
+                    offset={50}
+                    duration={500}
+                  >
+                    <Typography
+                      className="custom-link"
+                      sx={{
+                        fontWeight: 600,
+                        color: "text.main",
+                        "&:hover": { color: "primary.main" },
+                        fontSize: "17px",
+                      }}
+                    >
+                      Skills
+                    </Typography>
+                  </Link>
+
+                  {/* <Link
                     href={""}
                     style={{
                       textDecoration: "none",
@@ -158,12 +207,12 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                     >
                       Contact me
                     </Typography>
-                  </Link>
+                  </Link> */}
                 </Box>
 
                 <IconButton onClick={handleThemeToggle}>
                   {isDarkMode ? (
-                    <Brightness6OutlinedIcon
+                    <LightModeIcon
                       sx={{ "&:hover": { color: "primary.main" } }}
                     />
                   ) : (
@@ -177,7 +226,7 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
           </Toolbar>
         </Container>
       </AppBar>
-    </Box>
+    </>
   );
 };
 

@@ -2,9 +2,10 @@ import SimCardDownloadIcon from "@mui/icons-material/SimCardDownload";
 import { Box, Button, Container, Typography } from "@mui/material";
 import Image from "next/image";
 import AboutImg from "../../asset/aboutImg.jpg";
-const About = () => {
+
+const AboutPage = () => {
   return (
-    <Box sx={{ height: "", bgcolor: "container.main" }}>
+    <Box id="about" sx={{ height: "80vh", bgcolor: "container.main" }}>
       <Container maxWidth="xl">
         <Box
           sx={{
@@ -182,4 +183,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutPage;

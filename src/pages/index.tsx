@@ -1,8 +1,9 @@
-import About from "@/components/About/About";
-import HomeCompo from "@/components/Home/HomeCompo";
 import Navbar from "@/components/Navbar/Navbar";
 import { Inter } from "next/font/google";
 import Head from "next/head";
+import AboutPage from "./About";
+import HomePage from "./Home";
+import SkillsPage from "./Skills";
 
 const inter = Inter({ subsets: ["latin"] });
 interface Props {
@@ -22,8 +23,10 @@ export default function Home({ isDarkMode, setDarkMode }: Props) {
       {/* <Layout isDarkMode={isDarkMode} setDarkMode={setDarkMode} /> */}
 
       <Navbar setDarkMode={setDarkMode} isDarkMode={isDarkMode} />
-      <HomeCompo />
-      <About />
+      <HomePage />
+      <AboutPage />
+      <SkillsPage />
+      
     </>
   );
 }

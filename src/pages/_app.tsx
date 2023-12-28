@@ -8,6 +8,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import type { AppProps } from "next/app";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
@@ -58,6 +59,16 @@ export default function App({ Component, pageProps }: AppProps) {
       document.documentElement.classList.remove("dark");
     }
   }, [isDarkMode]);
+  const router = useRouter();
+
+  useEffect(() => {
+    // Check if the page was accessed directly by typing the URL
+    if (typeof window !== "undefined" && window.location.pathname !== "/") {
+      // Redirect to the root page or any other page you want
+      router.push("/");
+    }
+  }, [router]);
+
   return (
     <ThemeProvider theme={theme}>
       <Component
