@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../Navbar";
 
 interface Props {
   isDarkMode: boolean;

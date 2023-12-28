@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar/Navbar";
+import Navbar from "@/components/Navbar";
 import { Inter } from "next/font/google";
 import Head from "next/head";
 import AboutPage from "./About";
@@ -26,7 +26,6 @@ export default function Home({ isDarkMode, setDarkMode }: Props) {
       <HomePage />
       <AboutPage />
       <SkillsPage />
-      
     </>
   );
 }
