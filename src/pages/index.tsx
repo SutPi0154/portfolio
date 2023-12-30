@@ -1,11 +1,10 @@
 import Navbar from "@/components/Navbar";
-import { Inter } from "next/font/google";
 import Head from "next/head";
 import AboutPage from "./About";
 import HomePage from "./Home";
+import PortfolioPage from "./Portfolio";
 import SkillsPage from "./Skills";
 
-const inter = Inter({ subsets: ["latin"] });
 interface Props {
   isDarkMode: boolean;
   setDarkMode: () => void;
@@ -20,12 +19,12 @@ export default function Home({ isDarkMode, setDarkMode }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <Layout isDarkMode={isDarkMode} setDarkMode={setDarkMode} /> */}
 
       <Navbar setDarkMode={setDarkMode} isDarkMode={isDarkMode} />
       <HomePage />
       <AboutPage />
       <SkillsPage />
+      <PortfolioPage />
     </>
   );
 }

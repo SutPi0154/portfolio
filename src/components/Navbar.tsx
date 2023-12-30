@@ -11,7 +11,6 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-// import Link from "next/link";
 
 interface ThemeToggleProps {
   isDarkMode: boolean;
@@ -123,64 +122,17 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                     </Typography>
                   </Link>
 
-                  {/* <Link
-                    href={""}
-                    style={{
-                      textDecoration: "none",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontWeight: 600,
-                        color: "text.main",
-                        "&:hover": { color: "primary.main" },
-                        fontSize: "17px",
-                      }}
-                    >
-                      About
-                    </Typography>
-                  </Link>
                   <Link
-                    href={""}
-                    style={{
-                      textDecoration: "none",
-                    }}
+                    activeClass="active-link"
+                    to="po-page"
+                    spy={true}
+                    smooth={true}
+                    style={{ cursor: "pointer", userSelect: "none" }}
+                    offset={50}
+                    duration={500}
                   >
                     <Typography
-                      sx={{
-                        fontWeight: 600,
-                        color: "text.main",
-                        "&:hover": { color: "primary.main" },
-                        fontSize: "17px",
-                      }}
-                    >
-                      Skills
-                    </Typography>
-                  </Link>
-                  <Link
-                    href={""}
-                    style={{
-                      textDecoration: "none",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontWeight: 600,
-                        color: "text.main",
-                        "&:hover": { color: "primary.main" },
-                        fontSize: "17px",
-                      }}
-                    >
-                      Services
-                    </Typography>
-                  </Link>
-                  <Link
-                    href={""}
-                    style={{
-                      textDecoration: "none",
-                    }}
-                  >
-                    <Typography
+                      className="custom-link"
                       sx={{
                         fontWeight: 600,
                         color: "text.main",
@@ -191,23 +143,6 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                       Portfolio
                     </Typography>
                   </Link>
-                  <Link
-                    href={""}
-                    style={{
-                      textDecoration: "none",
-                    }}
-                  >
-                    <Typography
-                      sx={{
-                        fontWeight: 600,
-                        color: "text.main",
-                        "&:hover": { color: "primary.main" },
-                        fontSize: "17px",
-                      }}
-                    >
-                      Contact me
-                    </Typography>
-                  </Link> */}
                 </Box>
 
                 <IconButton onClick={handleThemeToggle}>

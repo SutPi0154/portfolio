@@ -1,19 +1,18 @@
 import SimCardDownloadIcon from "@mui/icons-material/SimCardDownload";
 import { Box, Button, Container, Typography } from "@mui/material";
 import Image from "next/image";
-import AboutImg from "../../asset/aboutImg.jpg";
 
 const AboutPage = () => {
   return (
-    <Box id="about" sx={{ height: "80vh", bgcolor: "container.main" }}>
+    <Box id="about" sx={{ height: "", bgcolor: "container.main" }}>
       <Container maxWidth="xl">
         <Box
           sx={{
+            py: 20,
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
             justifyContent: "center",
-            mb: 10,
           }}
         >
           <Typography variant="h3" sx={{ fontWeight: 700 }}>
@@ -35,7 +34,8 @@ const AboutPage = () => {
         >
           <Box sx={{ width: "35%" }}>
             <Image
-              src={AboutImg}
+              src="/aboutImg.jpg"
+              height={400}
               style={{ borderRadius: "10px" }}
               width={400}
               alt="Picture of the author"
@@ -164,10 +164,13 @@ const AboutPage = () => {
                 variant="contained"
                 sx={{
                   py: 2,
+                  width: "fit-content",
                   borderRadius: 2,
                   display: "flex",
                   alignItems: "center",
                 }}
+                href="/myCV.pdf"
+                download
               >
                 <Typography sx={{ mr: 1, fontWeight: 600, fontSize: "18px" }}>
                   {" "}
