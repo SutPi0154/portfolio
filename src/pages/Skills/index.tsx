@@ -1,5 +1,6 @@
 import { skills } from "@/utils/skills";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MenuIcon from "@mui/icons-material/Menu";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import {
   Accordion,
@@ -19,7 +20,8 @@ const SkillsPage = () => {
       <Box
         sx={{
           bgcolor: "container.main",
-          py: 20,
+          mt: 10,
+          py: 10,
         }}
       >
         <Container maxWidth="xl">
@@ -86,7 +88,7 @@ const SkillsPage = () => {
                 </Box>
               </AccordionSummary>
               <AccordionDetails>
-                {skills?.slice(0, 5).map((item) => (
+                {skills?.slice(0, 8).map((item) => (
                   <Box sx={{ mb: 2 }} key={item.id}>
                     <Box
                       sx={{
@@ -126,14 +128,48 @@ const SkillsPage = () => {
                 aria-controls="panel2a-content"
                 id="panel2a-header"
               >
-                <Typography>Accordion 1</Typography>
+                <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+                  <MenuIcon sx={{ color: "primary.main", fontSize: 40 }} />
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <Typography variant="h6" sx={{ fontWeight: 900 }}>
+                      Other necessary skills
+                    </Typography>
+                    <Typography
+                      sx={{ fontWeight: 300, color: "textSecondary.main" }}
+                    >
+                      more than 4 years
+                    </Typography>
+                  </Box>
+                </Box>
               </AccordionSummary>
               <AccordionDetails>
-                <Typography>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                  eget.
-                </Typography>
+                {skills?.slice(13, 16).map((item) => (
+                  <Box sx={{ mb: 2 }} key={item.id}>
+                    <Box
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                        mb: 1,
+                      }}
+                    >
+                      <Typography sx={{ fontSize: 18, fontWeight: "600" }}>
+                        {item.name}
+                      </Typography>
+                      <Typography>{item.skillPercentage}%</Typography>
+                    </Box>
+                    <LinearProgress
+                      color="secondary"
+                      variant="determinate"
+                      sx={{ height: 7, borderRadius: "20px", color: "red" }}
+                      value={item.skillPercentage}
+                    />
+                  </Box>
+                ))}
               </AccordionDetails>
             </Accordion>
             <Accordion
@@ -142,7 +178,7 @@ const SkillsPage = () => {
                 bgcolor: "container.main",
                 width: "40%",
                 border: "none",
-                justifySelf: "start",
+                justifySelf: "self-start",
               }}
             >
               <AccordionSummary
@@ -180,7 +216,7 @@ const SkillsPage = () => {
                 </Box>
               </AccordionSummary>
               <AccordionDetails>
-                {skills.slice(5, 10).map((item) => (
+                {skills.slice(8, 13).map((item) => (
                   <Box sx={{ mb: 2 }} key={item.id}>
                     <Box
                       sx={{

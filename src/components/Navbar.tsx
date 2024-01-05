@@ -40,9 +40,25 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
               }}
             >
               <Box>
-                <Typography variant="h6" sx={{ fontWeight: 600 }}>
-                  Sut Pi
-                </Typography>
+                <Link
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  style={{ cursor: "pointer", userSelect: "none" }}
+                  offset={0}
+                  duration={500}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 600,
+                      color: "text.primary",
+                      ":hover": { color: "primary.main" },
+                    }}
+                  >
+                    Jl Sut Pi
+                  </Typography>
+                </Link>
               </Box>
               <Box
                 sx={{
@@ -64,7 +80,7 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                     spy={true}
                     smooth={true}
                     style={{ cursor: "pointer", userSelect: "none" }}
-                    offset={50}
+                    offset={0}
                     duration={500}
                   >
                     <Typography
@@ -85,7 +101,7 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                     spy={true}
                     smooth={true}
                     style={{ cursor: "pointer", userSelect: "none" }}
-                    offset={50}
+                    offset={0}
                     duration={500}
                   >
                     <Typography
@@ -100,13 +116,14 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                       About
                     </Typography>
                   </Link>
+
                   <Link
                     activeClass="active-link"
                     to="skills"
                     spy={true}
                     smooth={true}
                     style={{ cursor: "pointer", userSelect: "none" }}
-                    offset={50}
+                    offset={0}
                     duration={500}
                   >
                     <Typography
@@ -141,6 +158,27 @@ const Navbar: React.FC<ThemeToggleProps> = ({ isDarkMode, setDarkMode }) => {
                       }}
                     >
                       Portfolio
+                    </Typography>
+                  </Link>
+                  <Link
+                    activeClass="active-link"
+                    to="contact-me-page"
+                    spy={true}
+                    smooth={true}
+                    style={{ cursor: "pointer", userSelect: "none" }}
+                    offset={0}
+                    duration={500}
+                  >
+                    <Typography
+                      className="custom-link"
+                      sx={{
+                        fontWeight: 600,
+                        color: "text.main",
+                        "&:hover": { color: "primary.main" },
+                        fontSize: "17px",
+                      }}
+                    >
+                      Contact me
                     </Typography>
                   </Link>
                 </Box>

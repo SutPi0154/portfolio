@@ -1,3 +1,5 @@
+import SnackBar from "@/components/Snackbar";
+import { store } from "@/store";
 import "@/styles/globals.css";
 import { useLocalStorage } from "@/utils/localStorage";
 import {
@@ -10,6 +12,7 @@ import {
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import { Provider } from "react-redux";
 
 export default function App({ Component, pageProps }: AppProps) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
@@ -25,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
     success: { main: "#FFE9B1" },
     info: { main: "#FCFDF2" },
     container: { main: "#fcfbff" },
+    textField: { main: "#efeffe" },
   };
 
   const darkModeColors = {
@@ -70,13 +74,16 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router]);
 
   return (
-    <ThemeProvider theme={theme}>
-      <Component
-        {...pageProps}
-        setDarkMode={setDarkMode}
-        isDarkMode={isDarkMode}
-      />
-      <CssBaseline />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Component
+          {...pageProps}
+          setDarkMode={setDarkMode}
+          isDarkMode={isDarkMode}
+        />
+        <SnackBar />
+        <CssBaseline />
+      </ThemeProvider>
+    </Provider>
   );
 }
