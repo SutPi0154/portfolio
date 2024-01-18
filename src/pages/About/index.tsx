@@ -57,8 +57,8 @@ const AboutPage = () => {
                 width={0}
                 height={0}
                 alt=""
-                sizes="10vw"
-                style={{ width: "100%", height: "auto", borderRadius: "10px" }} // optional
+                sizes="100vw"
+                style={{ width: "90%", height: "auto", borderRadius: "10px" }} // optional
               />
             </Box>
             <Box sx={{ width: { xs: "100%", lg: "30%" } }}>

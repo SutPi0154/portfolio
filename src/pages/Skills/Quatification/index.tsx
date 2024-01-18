@@ -114,7 +114,7 @@ const Qualification = () => {
               sx={{
                 width: 1,
                 bgcolor: "primary.dark",
-                height: { xs: "86vh", sm: "50vh", md: "40vh", lg: "42vh" },
+                height: { xs: "86vh", sm: "54vh", md: "40vh", lg: "42vh" },
               }}
             >
               <CircleIcon
@@ -139,7 +139,7 @@ const Qualification = () => {
                 sx={{
                   position: "absolute",
                   right: -10,
-                  bottom: { xs: 240, sm: -110, md: -20, lg: 170 },
+                  bottom: { xs: 240, sm: 150, md: 140, lg: 170 },
                   fontSize: 20,
                   color: "primary.main",
                 }}
