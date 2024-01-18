@@ -231,7 +231,7 @@ const HomePage = () => {
                     <div>
                       <Image
                         priority={true}
-                        src="/perfil1.png"
+                        src="/perfil.png"
                         width={0}
                         height={0}
                         alt=""
