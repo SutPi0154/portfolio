@@ -9,7 +9,7 @@ const Qualification = () => {
     <Box
       sx={{
         bgcolor: "container.main",
-        height: { xs: "100vh", sm: "90vh", md: "auto", lg: "100vh" },
+        height: { md: "auto", lg: "100vh" },
       }}
     >
       <Container maxWidth="xl">
@@ -54,7 +54,6 @@ const Qualification = () => {
           <Box
             sx={{
               display: "flex",
-
               alignItems: "center",
               gap: 1,
             }}
@@ -82,7 +81,6 @@ const Qualification = () => {
           sx={{
             display: "flex",
             justifyContent: "center",
-            height: "40vh",
             gap: { xs: 2, lg: 6 },
           }}
         >
@@ -116,7 +114,7 @@ const Qualification = () => {
               sx={{
                 width: 1,
                 bgcolor: "primary.dark",
-                height: { xs: "58vh", sm: "50vh", md: "40vh", lg: "40vh" },
+                height: { xs: "86vh", sm: "50vh", md: "40vh", lg: "42vh" },
               }}
             >
               <CircleIcon
@@ -141,11 +139,23 @@ const Qualification = () => {
                 sx={{
                   position: "absolute",
                   right: -10,
-                  bottom: { xs: -170, sm: -110, md: -20, lg: -10 },
+                  bottom: { xs: 240, sm: -110, md: -20, lg: 170 },
                   fontSize: 20,
                   color: "primary.main",
                 }}
               />
+              <Box
+                sx={{
+                  display: { xs: "block", sm: "none" },
+                  position: "absolute",
+                  height: 300,
+                  width: 10,
+                  bgcolor: "container.main",
+                  bottom: -60,
+                  right: -4,
+                  zIndex: 10,
+                }}
+              ></Box>
             </Box>
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column" }}>

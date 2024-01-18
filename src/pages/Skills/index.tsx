@@ -23,7 +23,7 @@ const SkillsPage = () => {
           bgcolor: "container.main",
           mt: 10,
           pt: { xs: 5, md: 10, lg: 10 },
-          mb: { xs: 10, md: 10, lg: 0 },
+          mb: { md: 10, lg: 0 },
         }}
       >
         <Container maxWidth="xl">
@@ -275,8 +275,8 @@ const SkillsPage = () => {
               </AccordionDetails>
             </Accordion>
           </Box>
+          <Qualification />
         </Container>
-        <Qualification />
       </Box>
     </Element>
   );

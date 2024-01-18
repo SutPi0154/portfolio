@@ -5,7 +5,7 @@ import { Box, Container, Typography } from "@mui/material";
 import { Element } from "react-scroll";
 const ServicePage = () => (
   <Element name="services">
-    <Box sx={{ bgcolor: "container.main", my: 10, py: 10 }}>
+    <Box sx={{ bgcolor: "container.main", my: { xs: 0, sm: 10 }, py: 10 }}>
       <Container maxWidth="xl">
         <Box
           sx={{

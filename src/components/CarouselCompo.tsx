@@ -35,6 +35,7 @@ function CarouselCompo() {
         display: "flex",
         justifyContent: "center",
         bgcolor: "container.main",
+        // position: "relative",
       }}
     >
       <Carousel
@@ -50,7 +51,8 @@ function CarouselCompo() {
         }}
         indicatorContainerProps={{
           style: {
-            bottom: 0,
+            bottom: -5,
+            zIndex: 200,
             position: "absolute",
             backgroundColor: "container.main",
           },
@@ -85,7 +87,7 @@ function CarouselCompo() {
         sx={{
           width: { xs: 420, sm: 700, md: 900, lg: 1300 },
           height: {
-            xs: "52vh",
+            xs: "",
             sm: "48vh",
             md: "24vh",
             lg: "40vh",

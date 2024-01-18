@@ -1,5 +1,4 @@
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
 interface Props {
@@ -41,7 +40,7 @@ const CarouseItem = ({ item }: Props) => {
           >
             {item.description}
           </Typography>
-          <Button
+          {/* <Button
             variant="contained"
             sx={{
               py: { xs: 1, md: 2, lg: 2 },
@@ -58,7 +57,7 @@ const CarouseItem = ({ item }: Props) => {
               Demo
             </Typography>
             <ArrowForwardIcon />
-          </Button>
+          </Button> */}
         </Box>
       </Box>
     </Box>
