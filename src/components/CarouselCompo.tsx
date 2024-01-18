@@ -7,45 +7,25 @@ import CarouseItem from "./CarouseItem";
 function CarouselCompo() {
   var items = [
     {
-      title: "Random title #1",
+      id: 1,
+      title: "Mastering UI/UX Harmony",
       image: "/portfolio1.jpg",
-      description: "Probably the most random thing you have ever seen!",
-    },
-    {
-      title: "Random title #2",
-      image: "/portfolio2.jpg",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, perspiciatis nostrum. ",
+        "UI/UX expertise combines seamless design and user-centricity for optimal digital interactions.",
     },
     {
-      title: "Random title #2",
+      id: 2,
+      title: "Next.js & React: Responsive Perfection",
       image: "/portfolio3.jpg",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, perspiciatis nostrum. ",
+        "Perfect responsiveness with Next.js and React, ensuring optimal user experiences on any device. ",
     },
     {
-      title: "Random title #2",
-      image: "/portfolio1.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, perspiciatis nostrum. ",
-    },
-    {
-      title: "Random title #2",
+      id: 3,
+      title: "API Insight: Unraveling the Basics.",
       image: "/portfolio2.jpg",
       description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, perspiciatis nostrum. ",
-    },
-    {
-      title: "Random title #2",
-      image: "/portfolio3.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, perspiciatis nostrum. ",
-    },
-    {
-      title: "Random title #2",
-      image: "/portfolio1.jpg",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, perspiciatis nostrum. ",
+        "Gain a foundational grasp of APIs and their functionality to navigate the digital landscape with confidence. ",
     },
   ];
 
@@ -60,7 +40,6 @@ function CarouselCompo() {
       <Carousel
         autoPlay={false}
         animation={"slide"}
-        height={"40vh"}
         navButtonsAlwaysVisible
         fullHeightHover={true} // We want the nav buttons wrapper to only be as big as the button element is
         indicatorIconButtonProps={{
@@ -71,6 +50,8 @@ function CarouselCompo() {
         }}
         indicatorContainerProps={{
           style: {
+            bottom: 0,
+            position: "absolute",
             backgroundColor: "container.main",
           },
         }}
@@ -81,13 +62,14 @@ function CarouselCompo() {
         }}
         navButtonsProps={{
           style: {
+            color: "#6c5edf",
             backgroundColor: "#ffffff00",
           },
         }}
         NextIcon={
           <ArrowForwardIosIcon
             sx={{
-              fontSize: 45,
+              fontSize: { xs: 25, sm: 35, lg: 45 },
               color: "primary.main",
             }}
           />
@@ -95,18 +77,24 @@ function CarouselCompo() {
         PrevIcon={
           <ArrowBackIosNewIcon
             sx={{
-              fontSize: 45,
+              fontSize: { xs: 25, sm: 35, lg: 45 },
               color: "primary.main",
-              "&:hover": {
-                color: "primary.dark",
-              },
             }}
           />
         }
-        sx={{ width: 1300 }}
+        sx={{
+          width: { xs: 420, sm: 700, md: 900, lg: 1300 },
+          height: {
+            xs: "52vh",
+            sm: "48vh",
+            md: "24vh",
+            lg: "40vh",
+            zIndex: 10,
+          },
+        }}
       >
         {items.map((item, i) => (
-          <CarouseItem key={i} item={item} />
+          <CarouseItem key={item.id} item={item} />
         ))}
       </Carousel>
     </Box>

@@ -6,7 +6,12 @@ import { Box, Container, Typography } from "@mui/material";
 
 const Qualification = () => {
   return (
-    <Box sx={{ bgcolor: "container.main", height: "" }}>
+    <Box
+      sx={{
+        bgcolor: "container.main",
+        height: { xs: "100vh", sm: "90vh", md: "auto", lg: "100vh" },
+      }}
+    >
       <Container maxWidth="xl">
         <Box
           sx={{
@@ -14,15 +19,24 @@ const Qualification = () => {
             alignItems: "center",
             flexDirection: "column",
             justifyContent: "center",
-            mb: 10,
+            mt: { xs: 10, lg: 20 },
+            mb: { xs: 5, md: 10, lg: 10 },
           }}
         >
-          <Typography variant="h3" sx={{ fontWeight: 700 }}>
+          <Typography
+            sx={{
+              fontWeight: 800,
+              fontSize: { xs: 40, sm: 44, lg: 48 },
+            }}
+          >
             Qualification
           </Typography>
           <Typography
-            variant="h6"
-            sx={{ fontWeight: 300, color: "textSecondary.main" }}
+            sx={{
+              fontWeight: 300,
+              color: "textSecondary.main",
+              fontSize: { xs: 20 },
+            }}
           >
             my person journey
           </Typography>
@@ -34,7 +48,7 @@ const Qualification = () => {
             color: "primary.light",
             justifyContent: "center",
             gap: 8,
-            mb: 5,
+            mb: { xs: 5, lg: 10 },
           }}
         >
           <Box
@@ -46,7 +60,7 @@ const Qualification = () => {
             }}
           >
             <SchoolIcon sx={{ fontSize: 30 }} />
-            <Typography sx={{ fontSize: 20, letterSpacing: 1 }}>
+            <Typography sx={{ fontSize: { xs: 20, sm: 22 }, letterSpacing: 1 }}>
               Education
             </Typography>
           </Box>
@@ -59,7 +73,7 @@ const Qualification = () => {
             }}
           >
             <BusinessCenterIcon sx={{ fontSize: 30 }} />
-            <Typography sx={{ fontSize: 20, letterSpacing: 1 }}>
+            <Typography sx={{ fontSize: { xs: 20, sm: 22 }, letterSpacing: 1 }}>
               Work
             </Typography>
           </Box>
@@ -69,12 +83,14 @@ const Qualification = () => {
             display: "flex",
             justifyContent: "center",
             height: "40vh",
-            gap: 6,
+            gap: { xs: 2, lg: 6 },
           }}
         >
           <Box>
-            <Box>
-              <Typography sx={{ fontSize: 20, color: "text.main", mb: 1 }}>
+            <Box sx={{ ml: { xs: 5, lg: 10 } }}>
+              <Typography
+                sx={{ fontSize: { xs: 20, sm: 22 }, color: "text.main", mb: 1 }}
+              >
                 High School
               </Typography>
               <Typography sx={{ fontSize: 16, color: "text.secondary", mb: 4 }}>
@@ -90,8 +106,19 @@ const Qualification = () => {
               </Box>
             </Box>
           </Box>
-          <Box sx={{ width: "0.01%", position: "relative" }}>
-            <Box sx={{ width: 1, bgcolor: "primary.dark", height: "40vh" }}>
+          <Box
+            sx={{
+              width: { xs: "0.1%", lg: "0.01%" },
+              position: "relative",
+            }}
+          >
+            <Box
+              sx={{
+                width: 1,
+                bgcolor: "primary.dark",
+                height: { xs: "58vh", sm: "50vh", md: "40vh", lg: "40vh" },
+              }}
+            >
               <CircleIcon
                 sx={{
                   position: "absolute",
@@ -105,7 +132,7 @@ const Qualification = () => {
                 sx={{
                   position: "absolute",
                   right: -10,
-                  top: 160,
+                  top: { xs: 200, lg: 160 },
                   fontSize: 20,
                   color: "primary.main",
                 }}
@@ -114,7 +141,7 @@ const Qualification = () => {
                 sx={{
                   position: "absolute",
                   right: -10,
-                  bottom: -10,
+                  bottom: { xs: -170, sm: -110, md: -20, lg: -10 },
                   fontSize: 20,
                   color: "primary.main",
                 }}
@@ -122,8 +149,10 @@ const Qualification = () => {
             </Box>
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column" }}>
-            <Box sx={{ mt: 20 }}>
-              <Typography sx={{ fontSize: 20, color: "text.main", mb: 1 }}>
+            <Box sx={{ mt: { xs: 25, lg: 20 } }}>
+              <Typography
+                sx={{ fontSize: { xs: 20, sm: 22 }, color: "text.main", mb: 1 }}
+              >
                 Web Development
               </Typography>
               <Typography sx={{ fontSize: 16, color: "text.secondary", mb: 4 }}>
@@ -139,8 +168,10 @@ const Qualification = () => {
                 </Typography>
               </Box>
             </Box>
-            <Box sx={{ mt: 2 }}>
-              <Typography sx={{ fontSize: 20, color: "text.main", mb: 1 }}>
+            <Box sx={{ mt: { xs: 2, sm: 12, lg: 2 } }}>
+              <Typography
+                sx={{ fontSize: { xs: 20, sm: 22 }, color: "text.main", mb: 1 }}
+              >
                 Web Development
               </Typography>
               <Typography sx={{ fontSize: 16, color: "text.secondary", mb: 4 }}>

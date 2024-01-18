@@ -2,7 +2,7 @@ import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import MouseIcon from "@mui/icons-material/Mouse";
-import SendIcon from "@mui/icons-material/Send";
+import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { Box, Button, Container, IconButton, Typography } from "@mui/material";
 import Image from "next/image";
@@ -13,8 +13,7 @@ const HomePage = () => {
       <Box
         sx={{
           bgcolor: "container.main",
-          height: "92vh",
-          pt: 10,
+          pt: { xs: 0, md: 10, lg: 10 },
           mb: 10,
           display: "flex",
           alignItems: "center",
@@ -23,150 +22,189 @@ const HomePage = () => {
         <Container sx={{ height: "100%" }} maxWidth="xl">
           <Box
             sx={{
-              height: "100%",
+              height: { lg: "100%" },
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexWrap: "wrap",
+              alignItems: { xs: "start", lg: "center" },
+              justifyContent: { xs: "center", lg: "center" },
+              flexWrap: "wrap-reverse",
+              position: "relative",
+              gap: { xs: 6, lg: 10 },
+              mt: { xs: 15, lg: 0 },
             }}
           >
             <Box
               sx={{
-                h: "100%",
-                display: "flex",
-                width: { xs: "40%", sm: "40%", md: "40%", lg: "20%" },
-                flexDirection: "column",
-                gap: 4,
-                justifyContent: "center",
+                left: 0,
+                position: "absolute",
               }}
             >
-              <Box>
-                <a
-                  href="https://github.com/SutPi0154"
-                  target="_blank"
-                  style={{ textDecoration: "none" }}
-                >
-                  <IconButton>
-                    <GitHubIcon
-                      sx={{
-                        color: "primary.main",
-                        fontSize: "30px",
-                      }}
-                    />
-                  </IconButton>
-                </a>
-              </Box>
-              <Box>
-                <a
-                  href="https://www.facebook.com/profile.php?id=100087893903639"
-                  target="_blank"
-                  style={{ textDecoration: "none" }}
-                >
-                  <IconButton>
-                    <FacebookOutlinedIcon
-                      sx={{
-                        color: "primary.main",
-                        fontSize: "30px",
-                      }}
-                    />
-                  </IconButton>
-                </a>
-              </Box>
-              <Box>
-                <a href="" target="_blank" style={{ textDecoration: "none" }}>
-                  <IconButton>
-                    <TwitterIcon
-                      sx={{
-                        color: "primary.main",
-                        fontSize: "30px",
-                      }}
-                    />
-                  </IconButton>
-                </a>
+              <Box
+                sx={{
+                  display: "flex",
+                  width: { xs: "40%", sm: "40%", md: "40%", lg: "20%" },
+                  flexDirection: "column",
+                  gap: 4,
+                  height: { xs: "260.438px", sm: "300px", lg: "auto" },
+                  justifyContent: "center",
+                  my: "auto",
+                }}
+              >
+                <Box>
+                  <a
+                    href="https://github.com/SutPi0154"
+                    target="_blank"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <IconButton>
+                      <GitHubIcon
+                        sx={{
+                          color: "primary.main",
+                          fontSize: "30px",
+                        }}
+                      />
+                    </IconButton>
+                  </a>
+                </Box>
+                <Box>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100087893903639"
+                    target="_blank"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <IconButton>
+                      <FacebookOutlinedIcon
+                        sx={{
+                          color: "primary.main",
+                          fontSize: "30px",
+                        }}
+                      />
+                    </IconButton>
+                  </a>
+                </Box>
+                <Box>
+                  <a href="" target="_blank" style={{ textDecoration: "none" }}>
+                    <IconButton>
+                      <TwitterIcon
+                        sx={{
+                          color: "primary.main",
+                          fontSize: "30px",
+                        }}
+                      />
+                    </IconButton>
+                  </a>
+                </Box>
               </Box>
             </Box>
             <Box
               sx={{
-                width: "40%",
-                height: "100%",
+                width: { xs: "100%", md: "40%", lg: "35%" },
+                height: { xs: "auto", lg: "100%" },
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "space-between",
+                justifyContent: { xs: "start", lg: "space-between" },
               }}
             >
-              <Box sx={{ mt: 30 }}>
-                <Typography variant="h3" sx={{ fontWeight: 700, mb: 2 }}>
-                  Hi, I am Sut Pi
+              <Box sx={{ mt: { xs: 0, lg: 30 } }}>
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    mb: { lg: 2 },
+                    fontSize: { xs: 36, sm: 44, lg: 54 },
+                  }}
+                >
+                  Hi, I am Jl Sut Pi
                 </Typography>
                 <Typography
-                  variant="h5"
-                  sx={{ mb: 2, fontWeight: 600, color: "textSecondary.main" }}
+                  sx={{
+                    mb: { xs: 1, lg: 2 },
+                    fontWeight: 600,
+                    color: "textSecondary.main",
+                    fontSize: { xs: 20, sm: 24, lg: 30 },
+                  }}
                 >
                   Full-Stack Developer
                 </Typography>
                 <Typography
-                  variant="h6"
-                  sx={{ mb: 4, fontWeight: 100, color: "textSecondary.main" }}
+                  sx={{
+                    mb: { xs: 4, lg: 6 },
+                    fontWeight: 100,
+                    color: "textSecondary.main",
+                    fontSize: { xs: 20, sm: 22, lg: 20 },
+                    letterSpacing: { lg: 1 },
+                  }}
                 >
-                  High level exprerience in web developing and development
+                  High level experience in web developing and development
                   knowledge, producing quality work.
                 </Typography>
                 <Link
                   activeClass="active-link"
-                  to="contact-me-page"
+                  to="contact-me"
                   spy={true}
                   smooth={true}
                   style={{ cursor: "pointer", userSelect: "none" }}
                   offset={0}
                   duration={500}
                 >
-                  <Button variant="contained" sx={{ py: 2, borderRadius: 2 }}>
+                  <Button
+                    variant="contained"
+                    sx={{
+                      py: 2,
+                      borderRadius: 2,
+                    }}
+                  >
                     <Typography
-                      sx={{ mr: 1, fontWeight: 600, fontSize: "18px" }}
+                      sx={{
+                        mr: 1,
+                        fontWeight: 600,
+                        fontSize: { xs: 18, sm: 20, lg: 22 },
+                      }}
                     >
                       Contact me
                     </Typography>
-                    <SendIcon />
+                    <SendRoundedIcon sx={{ fontSize: { lg: 25 } }} />
                   </Button>
                 </Link>
               </Box>
-              <Link
-                activeClass="active-link"
-                to="about"
-                spy={true}
-                smooth={true}
-                style={{ cursor: "pointer", userSelect: "none" }}
-                offset={0}
-                duration={500}
-              >
-                <Button
-                  disableTouchRipple={true}
-                  sx={{
-                    display: { sm: "none", lg: "flex" },
-                    gap: 1,
-                    alignItems: "center",
-                    width: "fit-content",
-                    position: "relative",
-                    transition: "transform 0.5s ease-out", // Adjust duration and easing as needed
-                    "&:hover": {
-                      bgcolor: "container.main",
-                      transform: "translateY(12px)", // Adjust the translateY value as needed
-                    },
-                  }}
+              <Box sx={{ display: { xs: "none", lg: "block" } }}>
+                <Link
+                  activeClass="active-link"
+                  to="about"
+                  spy={true}
+                  smooth={true}
+                  style={{ cursor: "pointer", userSelect: "none" }}
+                  offset={0}
+                  duration={500}
                 >
-                  <MouseIcon sx={{ color: "primary.main" }} />
-                  <Box>
-                    <Typography sx={{ color: "text.primary" }}>
-                      Scroll down
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <ArrowDownwardIcon sx={{ color: "primary.main" }} />
-                  </Box>
-                </Button>
-              </Link>
+                  <Button
+                    disableTouchRipple={true}
+                    sx={{
+                      display: { sm: "none", lg: "flex" },
+                      mt: 15,
+                      gap: 1,
+                      alignItems: "center",
+                      width: "fit-content",
+                      position: "relative",
+                      transition: "transform 0.5s ease-out", // Adjust duration and easing as needed
+                      "&:hover": {
+                        bgcolor: "container.main",
+                        transform: "translateY(12px)", // Adjust the translateY value as needed
+                      },
+                    }}
+                  >
+                    <MouseIcon sx={{ color: "primary.main" }} />
+                    <Box>
+                      <Typography sx={{ color: "text.primary" }}>
+                        Scroll down
+                      </Typography>
+                    </Box>
+                    <Box>
+                      <ArrowDownwardIcon sx={{ color: "primary.main" }} />
+                    </Box>
+                  </Button>
+                </Link>
+              </Box>
             </Box>
-            <Box sx={{ width: "30%" }}>
+            <Box sx={{ width: { xs: "70%", sm: "50%", md: "34%", lg: "30%" } }}>
               <svg
                 viewBox="0 0 200 187"
                 xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +230,8 @@ const HomePage = () => {
                   <foreignObject x="20" y="30" width="160" height="160">
                     <div>
                       <Image
-                        src="/perfil.png"
+                        priority={true}
+                        src="/perfil1.png"
                         width={0}
                         height={0}
                         alt=""

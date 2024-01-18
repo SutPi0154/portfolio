@@ -5,7 +5,8 @@ import { FormDataType } from "@/types/sendEmail";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import FmdGoodOutlinedIcon from "@mui/icons-material/FmdGoodOutlined";
 import PhoneIcon from "@mui/icons-material/Phone";
-import SendIcon from "@mui/icons-material/Send";
+import SendRoundedIcon from "@mui/icons-material/SendRounded";
+
 import { Box, Button, Container, TextField, Typography } from "@mui/material";
 import emailjs from "emailjs-com";
 import { useState } from "react";
@@ -70,8 +71,8 @@ const ContactMe = () => {
   };
 
   return (
-    <Element name="contact-me-page">
-      <Box sx={{ pt: 10, mt: 10 }}>
+    <Element name="contact-me">
+      <Box sx={{ pt: { xs: 5, md: 10, lg: 10 }, mt: 10 }}>
         <Container maxWidth="lg">
           <Box
             sx={{
@@ -81,38 +82,56 @@ const ContactMe = () => {
               justifyContent: "center",
             }}
           >
-            <Typography variant="h3" sx={{ fontWeight: 700 }}>
+            <Typography
+              sx={{
+                fontWeight: 800,
+                fontSize: { xs: 40, sm: 44, lg: 48 },
+              }}
+            >
               Contact Me
             </Typography>
             <Typography
-              variant="h6"
-              sx={{ fontWeight: 300, color: "textSecondary.main" }}
+              sx={{
+                fontWeight: 300,
+                color: "textSecondary.main",
+                fontSize: { xs: 20 },
+              }}
             >
               Get in touch
             </Typography>
           </Box>
           <Box
             sx={{
-              my: 10,
+              my: { xs: 5, md: 10, lg: 10 },
               display: "flex",
               justifyContent: "center",
               alignItems: "start",
+              flexWrap: "wrap",
+              gap: { xs: 4, lg: 0 },
             }}
           >
             <Box
               sx={{
-                width: "40%",
+                width: { xs: "90%", md: "40%", lg: "40%" },
                 display: "flex",
                 flexDirection: "column",
-                gap: 5,
+                gap: { xs: 2, lg: 4 },
               }}
             >
               <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
-                <PhoneIcon sx={{ fontSize: 40, color: "primary.main" }} />
+                <PhoneIcon
+                  sx={{ fontSize: { xs: 36, lg: 40 }, color: "primary.main" }}
+                />
                 <Box>
-                  <Typography sx={{ fontSize: 25 }}>Call Me</Typography>
+                  <Typography sx={{ fontSize: { xs: 22, sm: 24, lg: 22 } }}>
+                    Call Me
+                  </Typography>
                   <Typography
-                    sx={{ fontWeight: 300, color: "textSecondary.main" }}
+                    sx={{
+                      fontWeight: 300,
+                      color: "textSecondary.main",
+                      fontSize: { xs: 18, sm: 20, lg: 16 },
+                    }}
                   >
                     09942919808
                   </Typography>
@@ -120,12 +139,18 @@ const ContactMe = () => {
               </Box>
               <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
                 <EmailOutlinedIcon
-                  sx={{ fontSize: 40, color: "primary.main" }}
+                  sx={{ fontSize: { xs: 36, lg: 40 }, color: "primary.main" }}
                 />
                 <Box>
-                  <Typography sx={{ fontSize: 28 }}>Email</Typography>
+                  <Typography sx={{ fontSize: { xs: 22, sm: 24, lg: 22 } }}>
+                    Email
+                  </Typography>
                   <Typography
-                    sx={{ fontWeight: 300, color: "textSecondary.main" }}
+                    sx={{
+                      fontWeight: 300,
+                      color: "textSecondary.main",
+                      fontSize: { xs: 18, sm: 20, lg: 16 },
+                    }}
                   >
                     sutpi070@gmail.ocm
                   </Typography>
@@ -133,31 +158,39 @@ const ContactMe = () => {
               </Box>
               <Box sx={{ display: "flex", gap: 2, alignItems: "center" }}>
                 <FmdGoodOutlinedIcon
-                  sx={{ fontSize: 40, color: "primary.main" }}
+                  sx={{ fontSize: { xs: 36, lg: 40 }, color: "primary.main" }}
                 />
                 <Box>
-                  <Typography sx={{ fontSize: 28 }}>Location</Typography>
+                  <Typography sx={{ fontSize: { xs: 22, sm: 24, lg: 26 } }}>
+                    Location
+                  </Typography>
                   <Typography
-                    sx={{ fontWeight: 300, color: "textSecondary.main" }}
+                    sx={{
+                      fontWeight: 300,
+                      color: "textSecondary.main",
+                      fontSize: { xs: 18, sm: 20, lg: 16 },
+                    }}
                   >
-                    Basic Education Primary School, 41 Street, Yangon
+                    Basic Education Primary School,
+                    <br /> 41 Street, Yangon
                   </Typography>
                 </Box>
               </Box>
             </Box>
             <Box
               sx={{
-                width: "70%",
-                bgcolor: "",
+                width: { xs: "90%", md: "56%", lg: "60%" },
                 display: "flex",
                 flexDirection: "column",
-                gap: 2,
+                gap: { xs: 2, sm: 2, md: 4, lg: 2 },
               }}
             >
               <Box
                 sx={{
                   display: "flex",
                   justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: { xs: 2, sm: 2, md: 4, lg: 0 },
                 }}
               >
                 <TextField
@@ -167,7 +200,10 @@ const ContactMe = () => {
                   onChange={(e) => {
                     setFormData({ ...formData, name: e.target.value });
                   }}
-                  sx={{ bgcolor: "textField.main", width: "48%" }}
+                  sx={{
+                    bgcolor: "textField.main",
+                    width: { xs: "100%", lg: "48%" },
+                  }}
                   error={!!errors.name}
                   helperText={errors.name}
                 />
@@ -179,7 +215,10 @@ const ContactMe = () => {
                   onChange={(e) => {
                     setFormData({ ...formData, email: e.target.value });
                   }}
-                  sx={{ bgcolor: "textField.main", width: "48%" }}
+                  sx={{
+                    bgcolor: "textField.main",
+                    width: { xs: "100%", lg: "48%" },
+                  }}
                   error={!!errors.email}
                   helperText={errors.email}
                 />
@@ -209,7 +248,7 @@ const ContactMe = () => {
                 <Button
                   variant="contained"
                   sx={{
-                    py: 2,
+                    py: { xs: 2 },
                     width: "fit-content",
                     borderRadius: 2,
                     display: "flex",
@@ -220,10 +259,16 @@ const ContactMe = () => {
                     handleSubmit();
                   }}
                 >
-                  <Typography sx={{ mr: 1, fontWeight: 600, fontSize: "18px" }}>
+                  <Typography
+                    sx={{
+                      mr: 1,
+                      fontWeight: 600,
+                      fontSize: { xs: 18, sm: 20, lg: 22 },
+                    }}
+                  >
                     Send Message
                   </Typography>
-                  <SendIcon />
+                  <SendRoundedIcon sx={{ fontSize: { lg: 25 } }} />
                 </Button>
               </Box>
             </Box>

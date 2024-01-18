@@ -8,8 +8,24 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  padding: 0 !important;
+}
+
+/* styles/fonts.css */
+
+.navbar {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 .active-link .custom-link {
   color: #3b3486; /* Change this to the desired active link color */
+}
+
+.btn-parent .btn-child {
+  transition: transform 0.5s ease-in-out;
+}
+
+.btn-parent:hover .btn-child {
+  transform: translateX(12px);
 }

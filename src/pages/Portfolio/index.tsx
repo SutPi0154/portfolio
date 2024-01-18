@@ -4,28 +4,36 @@ import { Element } from "react-scroll";
 
 const Portfolio = () => {
   return (
-    <Element name="po-page">
-      <Box sx={{ height: "90vh", bgcolor: "container.main", mt: 10 }}>
+    <Element name="projects">
+      <Box sx={{ bgcolor: "container.main" }}>
         <Container maxWidth="xl">
           <Box
             sx={{
-              pt: 20,
+              pt: { xs: 5, md: 20, lg: 10 },
               display: "flex",
               alignItems: "center",
               flexDirection: "column",
               justifyContent: "center",
             }}
           >
-            <Typography variant="h3" sx={{ fontWeight: 700 }}>
+            <Typography
+              sx={{
+                fontWeight: 800,
+                fontSize: { xs: 40, sm: 44, lg: 48 },
+              }}
+            >
               Portfolio
             </Typography>
             <Typography
-              variant="h6"
-              sx={{ fontWeight: 300, color: "textSecondary.main" }}
+              sx={{
+                fontWeight: 300,
+                color: "textSecondary.main",
+                fontSize: { xs: 20 },
+              }}
             >
               most recent work
             </Typography>
-            <Box sx={{ mt: 10 }}>
+            <Box sx={{ mt: { xs: 5, md: 5, lg: 10 } }}>
               <CarouselCompo />
             </Box>
           </Box>

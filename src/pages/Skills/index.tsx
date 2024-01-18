@@ -1,4 +1,5 @@
 import { skills } from "@/utils/skills";
+import DataObjectIcon from "@mui/icons-material/DataObject";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MenuIcon from "@mui/icons-material/Menu";
 import TerminalIcon from "@mui/icons-material/Terminal";
@@ -21,7 +22,8 @@ const SkillsPage = () => {
         sx={{
           bgcolor: "container.main",
           mt: 10,
-          py: 10,
+          pt: { xs: 5, md: 10, lg: 10 },
+          mb: { xs: 10, md: 10, lg: 0 },
         }}
       >
         <Container maxWidth="xl">
@@ -31,15 +33,23 @@ const SkillsPage = () => {
               alignItems: "center",
               flexDirection: "column",
               justifyContent: "center",
-              mb: 10,
+              mb: { xs: 5, lg: 10 },
             }}
           >
-            <Typography variant="h3" sx={{ fontWeight: 700 }}>
+            <Typography
+              sx={{
+                fontWeight: 800,
+                fontSize: { xs: 40, sm: 44, lg: 48 },
+              }}
+            >
               Skills
             </Typography>
             <Typography
-              variant="h6"
-              sx={{ fontWeight: 300, color: "textSecondary.main" }}
+              sx={{
+                fontWeight: 300,
+                color: "textSecondary.main",
+                fontSize: { xs: 20 },
+              }}
             >
               my technical level
             </Typography>
@@ -48,14 +58,17 @@ const SkillsPage = () => {
             sx={{
               display: "flex",
               justifyContent: "center",
-              gap: 4,
+              gap: { xs: 2, lg: 4 },
               flexWrap: "wrap",
               alignItems: "start",
             }}
           >
             <Accordion
               elevation={0}
-              sx={{ bgcolor: "container.main", width: "40%" }}
+              sx={{
+                bgcolor: "container.main",
+                width: { xs: "100%", lg: "40%" },
+              }}
             >
               <AccordionSummary
                 expandIcon={
@@ -67,20 +80,29 @@ const SkillsPage = () => {
                 id="panel1a-header"
               >
                 <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <Typography sx={{ fontSize: "30px", color: "primary.main" }}>
-                    {"{ }"}
-                  </Typography>
+                  <DataObjectIcon
+                    sx={{ color: "primary.main", fontSize: 40 }}
+                  />
                   <Box
                     sx={{
                       display: "flex",
                       flexDirection: "column",
                     }}
                   >
-                    <Typography variant="h6" sx={{ fontWeight: 900 }}>
+                    <Typography
+                      sx={{
+                        fontWeight: 900,
+                        fontSize: { xs: 18, sm: 22, lg: 22 },
+                      }}
+                    >
                       Frontend Development
                     </Typography>
                     <Typography
-                      sx={{ fontWeight: 300, color: "textSecondary.main" }}
+                      sx={{
+                        fontWeight: 300,
+                        color: "textSecondary.main",
+                        fontSize: { xs: 18, sm: 20, lg: 18 },
+                      }}
                     >
                       more than 4 years
                     </Typography>
@@ -116,7 +138,7 @@ const SkillsPage = () => {
               elevation={0}
               sx={{
                 bgcolor: "container.main",
-                width: "40%",
+                width: { xs: "100%", lg: "40%" },
               }}
             >
               <AccordionSummary
@@ -136,11 +158,20 @@ const SkillsPage = () => {
                       flexDirection: "column",
                     }}
                   >
-                    <Typography variant="h6" sx={{ fontWeight: 900 }}>
+                    <Typography
+                      sx={{
+                        fontWeight: 900,
+                        fontSize: { xs: 18, sm: 22, lg: 22 },
+                      }}
+                    >
                       Other necessary skills
                     </Typography>
                     <Typography
-                      sx={{ fontWeight: 300, color: "textSecondary.main" }}
+                      sx={{
+                        fontWeight: 300,
+                        color: "textSecondary.main",
+                        fontSize: { xs: 18, sm: 20, lg: 18 },
+                      }}
                     >
                       more than 4 years
                     </Typography>
@@ -176,7 +207,7 @@ const SkillsPage = () => {
               elevation={0}
               sx={{
                 bgcolor: "container.main",
-                width: "40%",
+                width: { xs: "100%", lg: "40%" },
                 border: "none",
                 justifySelf: "self-start",
               }}
@@ -191,24 +222,27 @@ const SkillsPage = () => {
                 id="panel2a-header"
               >
                 <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-                  <TerminalIcon
-                    sx={{
-                      fontSize: "50px",
-                      fontWeight: "300",
-                      color: "primary.main",
-                    }}
-                  />
+                  <TerminalIcon sx={{ color: "primary.main", fontSize: 40 }} />
                   <Box
                     sx={{
                       display: "flex",
                       flexDirection: "column",
                     }}
                   >
-                    <Typography variant="h6" sx={{ fontWeight: 900 }}>
+                    <Typography
+                      sx={{
+                        fontWeight: 900,
+                        fontSize: { xs: 18, sm: 22, lg: 22 },
+                      }}
+                    >
                       Back-end Development
                     </Typography>
                     <Typography
-                      sx={{ fontWeight: 300, color: "textSecondary.main" }}
+                      sx={{
+                        fontWeight: 300,
+                        color: "textSecondary.main",
+                        fontSize: { xs: 18, sm: 20, lg: 18 },
+                      }}
                     >
                       more than 4 years
                     </Typography>
@@ -242,8 +276,8 @@ const SkillsPage = () => {
             </Accordion>
           </Box>
         </Container>
+        <Qualification />
       </Box>
-      <Qualification />
     </Element>
   );
 };
