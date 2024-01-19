@@ -130,7 +130,7 @@ const NavbarDrawer = ({ setOpenDrawer }: Props) => {
       <Box sx={{ width: "30%" }}>
         <Link
           activeClass="active-link"
-          to="skills"
+          to="services"
           spy={true}
           smooth={true}
           style={{ cursor: "pointer", userSelect: "none" }}
@@ -148,7 +148,7 @@ const NavbarDrawer = ({ setOpenDrawer }: Props) => {
               gap: 1,
             }}
           >
-            <DescriptionRoundedIcon
+            <BusinessCenterRoundedIcon
               className="custom-link"
               sx={{ fontSize: { xs: 30, sm: 34 } }}
             />
@@ -156,7 +156,7 @@ const NavbarDrawer = ({ setOpenDrawer }: Props) => {
               className="custom-link"
               sx={{ fontSize: { xs: 16, sm: 18 } }}
             >
-              Skills
+              Services
             </Typography>
           </Box>
         </Link>
@@ -190,7 +190,7 @@ const NavbarDrawer = ({ setOpenDrawer }: Props) => {
               className="custom-link"
               sx={{ fontSize: { xs: 16, sm: 18 } }}
             >
-              Projects
+              Portfolio
             </Typography>
           </Box>
         </Link>

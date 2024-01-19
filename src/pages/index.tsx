@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import { Box } from "@mui/material";
+import CircularProgress from "@mui/material/CircularProgress";
 import Head from "next/head";
 import { useEffect, useState } from "react";
 import { Element, Link } from "react-scroll";
@@ -19,6 +20,7 @@ interface Props {
 
 export default function Home({ isDarkMode, setDarkMode }: Props) {
   const [showAdditionalSection, setShowAdditionalSection] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
@@ -32,6 +34,34 @@ export default function Home({ isDarkMode, setDarkMode }: Props) {
     };
   }, []);
 
+  // Simulate data loading with useEffect
+  useEffect(() => {
+    // Simulate a delay (e.g., fetching data from an API)
+    const fetchData = async () => {
+      // Simulated delay of 2 seconds
+      await new Promise((resolve) => setTimeout(resolve, 2000));
+
+      // Set loading to false once data is "loaded"
+      setIsLoading(true);
+    };
+
+    // Call the fetchData function
+    fetchData();
+  }, []);
+  if (isLoading === false)
+    return (
+      <Box
+        sx={{
+          bgcolor: "container.main",
+          height: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <CircularProgress disableShrink />
+      </Box>
+    );
   return (
     <Box sx={{ bgcolor: "container.main" }}>
       <Head>
